@@ -181,16 +181,30 @@ var Incrementer = function (_React$Component) {
   function Incrementer() {
     _classCallCheck(this, Incrementer);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Incrementer).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Incrementer).call(this));
+
+    _this.state = { count: 10 };
+    return _this;
   }
 
   _createClass(Incrementer, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        _this2.setState({ count: 50 });
+      }, 2000);
+
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(
+          'p',
+          null,
+          this.state.count
+        ),
         _react2.default.createElement(_Button2.default, null),
         _react2.default.createElement(_Footer2.default, null)
       );
