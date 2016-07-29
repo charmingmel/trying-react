@@ -7,23 +7,25 @@ import Button from './Button';
 
 
 class Incrementer extends React.Component {
-  constructor() {
-    super();
-    this.state = {count: 10};
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {count: 10};
+  // }
 
   render() {
 
-    setTimeout(() => {
-      this.setState({count: 50})
-    }, 2000);
+    // setTimeout(() => {
+    //   this.setState({count: 50})
+    // }, 2000);
+
+    const name = 'Williams';
+    const msg = 'Made in 2016';
 
     return (
       <div>
-        <Header />
-          <p>{this.state.count}</p>
+        <Header name={name}/>
           <Button />
-        <Footer />
+        <Footer copyright={msg}/>
       </div>
     );
   }

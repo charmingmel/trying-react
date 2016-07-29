@@ -77,6 +77,8 @@ var Footer = function (_React$Component) {
   _createClass(Footer, [{
     key: 'render',
     value: function render() {
+      console.log(this.props);
+
       return _react2.default.createElement(
         'div',
         null,
@@ -84,6 +86,11 @@ var Footer = function (_React$Component) {
           'h3',
           null,
           ' This is the footer.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          this.props.msg
         )
       );
     }
@@ -127,6 +134,7 @@ var Header = function (_React$Component) {
   _createClass(Header, [{
     key: 'render',
     value: function render() {
+      console.log(this.props);
       return _react2.default.createElement(
         'div',
         null,
@@ -134,7 +142,8 @@ var Header = function (_React$Component) {
           'h3',
           null,
           'This is the header :: Incrementer '
-        )
+        ),
+        _react2.default.createElement('p', { title: this.props.title })
       );
     }
   }]);
@@ -181,32 +190,32 @@ var Incrementer = function (_React$Component) {
   function Incrementer() {
     _classCallCheck(this, Incrementer);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Incrementer).call(this));
-
-    _this.state = { count: 10 };
-    return _this;
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Incrementer).apply(this, arguments));
   }
 
   _createClass(Incrementer, [{
     key: 'render',
-    value: function render() {
-      var _this2 = this;
 
-      setTimeout(function () {
-        _this2.setState({ count: 50 });
-      }, 2000);
+    // constructor() {
+    //   super();
+    //   this.state = {count: 10};
+    // }
+
+    value: function render() {
+
+      // setTimeout(() => {
+      //   this.setState({count: 50})
+      // }, 2000);
+
+      var name = 'Williams';
+      var msg = 'Made in 2016';
 
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Header2.default, null),
-        _react2.default.createElement(
-          'p',
-          null,
-          this.state.count
-        ),
+        _react2.default.createElement(_Header2.default, { name: name }),
         _react2.default.createElement(_Button2.default, null),
-        _react2.default.createElement(_Footer2.default, null)
+        _react2.default.createElement(_Footer2.default, { copyright: msg })
       );
     }
   }]);
