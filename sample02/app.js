@@ -7,16 +7,16 @@ import Button from './Button';
 
 
 class Incrementer extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {count: 10};
-  // }
+  constructor() {
+    super();
+    this.state = {count: 0};
+  }
+
+  increment(count) {
+    this.setState({count: count + 1});
+  }
 
   render() {
-
-    // setTimeout(() => {
-    //   this.setState({count: 50})
-    // }, 2000);
 
     const name = 'Williams';
     const msg = 'Made in 2016';
@@ -24,7 +24,8 @@ class Incrementer extends React.Component {
     return (
       <div>
         <Header name={name}/>
-          <Button />
+          <p>Mr. Count the {this.state.count}</p>
+          <Button count={this.state.count} increment={this.increment.bind(this)}/>
         <Footer copyright={msg}/>
       </div>
     );
